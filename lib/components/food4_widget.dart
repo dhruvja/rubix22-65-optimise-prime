@@ -55,7 +55,7 @@ class _Food4WidgetState extends State<Food4Widget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 30, 0),
+              padding: EdgeInsetsDirectional.fromSTEB(3, 0, 80, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,6 +71,25 @@ class _Food4WidgetState extends State<Food4Widget> {
                           color: Color(0xFFE21A1A),
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                        child: Container(
+                          width: 20,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: Color(0x00EEEEEE),
+                            border: Border.all(
+                              color: Color(0xFF6A9106),
+                              width: 3,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.stop_circle,
+                            color: Color(0xFF6A9106),
+                            size: 10,
+                          ),
                         ),
                       ),
                     ],

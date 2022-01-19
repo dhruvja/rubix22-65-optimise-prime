@@ -47,7 +47,7 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                             width: MediaQuery.of(context).size.width,
                             height: 80,
                             decoration: BoxDecoration(
-                              color: Color(0xFFEEEEEE),
+                              color: FlutterFlowTheme.tertiaryColor,
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -63,7 +63,10 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 0, 5, 0),
                                         child: FlutterFlowDropDown(
-                                          options: ['Option 1'].toList(),
+                                          initialOption: dropDownValue1 ??=
+                                              'Expired',
+                                          options:
+                                              ['Expired', 'Active'].toList(),
                                           onChanged: (val) => setState(
                                               () => dropDownValue1 = val),
                                           width: 160,
@@ -75,8 +78,8 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                           ),
                                           hintText: 'Please select...',
                                           fillColor: Colors.white,
-                                          elevation: 2,
-                                          borderColor: Colors.transparent,
+                                          elevation: 0,
+                                          borderColor: Colors.black,
                                           borderWidth: 0,
                                           borderRadius: 4,
                                           margin:
@@ -91,7 +94,10 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       FlutterFlowDropDown(
-                                        options: ['Option 1'].toList(),
+                                        initialOption: dropDownValue2 ??=
+                                            'Veggies',
+                                        options:
+                                            ['Veggies', 'Non veg'].toList(),
                                         onChanged: (val) => setState(
                                             () => dropDownValue2 = val),
                                         width: 160,
@@ -104,7 +110,7 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                         hintText: 'Please select...',
                                         fillColor: Colors.white,
                                         elevation: 2,
-                                        borderColor: Colors.transparent,
+                                        borderColor: Colors.black,
                                         borderWidth: 0,
                                         borderRadius: 3,
                                         margin: EdgeInsetsDirectional.fromSTEB(

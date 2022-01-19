@@ -42,7 +42,7 @@ class Recipie2Widget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: FlutterFlowTheme.title2.override(
                     fontFamily: 'Lato',
-                    fontSize: 18,
+                    fontSize: 16,
                     lineHeight: 1,
                   ),
                 ),
