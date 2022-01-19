@@ -25,12 +25,29 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.primaryColor,
+        automaticallyImplyLeading: true,
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              Align(
+                alignment: AlignmentDirectional(-0.95, 0),
+                child: Text(
+                  'Maa Ki Maaya',
+                  style: FlutterFlowTheme.title1.override(
+                    fontFamily: 'Poppins',
+                    color: FlutterFlowTheme.primaryColor,
+                  ),
+                ),
+              ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
