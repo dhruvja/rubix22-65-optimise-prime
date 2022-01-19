@@ -161,8 +161,13 @@ class _LinkWidgetState extends State<LinkWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LinkWidget(),
+                        ),
+                      );
                     },
                     text: 'Button',
                     options: FFButtonOptions(
