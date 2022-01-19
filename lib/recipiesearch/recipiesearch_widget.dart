@@ -24,15 +24,15 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
   void getItems() async {
     try {
       // String url = "http://192.168.0.192:5000/" + "api/getitem";
-      String text = "chicken";
+      String text = "noodles";
       String url = "https://api.spoonacular.com/recipes/complexSearch?query="+ text + "&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
       final response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         // print(response.body);
         var data = json.decode(response.body);
-        // print(data);
+        print(data);
         setState(() {
-          items = data;
+          items = data['results'];
           present = true;
         });
       }
@@ -105,6 +105,9 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
                       ),
                     ),
                     style: FlutterFlowTheme.bodyText1,
+                    onFieldSubmitted: (String text){
+                      getItems();
+                    }
                   ),
                 ),
                 Row(
