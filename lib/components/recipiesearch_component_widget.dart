@@ -19,7 +19,7 @@ class _RecipiesearchComponentWidgetState
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.9,
+        width: MediaQuery.of(context).size.width * 0.8,
         height: 120,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,

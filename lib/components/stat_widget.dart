@@ -17,7 +17,7 @@ class _StatWidgetState extends State<StatWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.height * 0.2,
+      height: 100,
       decoration: BoxDecoration(
         color: Color(0xFF00063D),
         borderRadius: BorderRadius.circular(0),
@@ -38,8 +38,8 @@ class _StatWidgetState extends State<StatWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   boxShadow: [
                     BoxShadow(
-                      blurRadius: 4,
-                      color: Color(0xFF0E6CAD),
+                      blurRadius: 5,
+                      color: Color(0xFFAEE1E1),
                     )
                   ],
                   borderRadius: BorderRadius.circular(10),
@@ -111,8 +111,8 @@ class _StatWidgetState extends State<StatWidget> {
                   color: FlutterFlowTheme.tertiaryColor,
                   boxShadow: [
                     BoxShadow(
-                      blurRadius: 4,
-                      color: Color(0xFF0E6CAD),
+                      blurRadius: 5,
+                      color: Color(0xFFAEFEFF),
                     )
                   ],
                   borderRadius: BorderRadius.circular(10),
