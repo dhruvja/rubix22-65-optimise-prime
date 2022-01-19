@@ -21,15 +21,18 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            StatWidget(),
-            Expanded(
-              child: Home2Widget(),
-            ),
-          ],
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              StatWidget(),
+              Expanded(
+                child: Home2Widget(),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -19,7 +19,7 @@ class _RecipiesearchComponentWidgetState
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.95,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 120,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
@@ -31,112 +31,116 @@ class _RecipiesearchComponentWidgetState
           ],
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFEEEEEE),
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: Image.asset(
-                          'assets/images/try1.jpg',
-                        ).image,
-                      ),
-                      borderRadius: BorderRadius.circular(0),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-              child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Dish name',
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Poppins',
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFEEEEEE),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: Image.asset(
+                            'assets/images/try1.jpg',
+                          ).image,
+                        ),
+                        borderRadius: BorderRadius.circular(0),
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'Type',
-                          style: FlutterFlowTheme.subtitle2,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          'Fat Content',
-                          style: FlutterFlowTheme.bodyText1,
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                          child: Text(
-                            'High',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color: FlutterFlowTheme.primaryColor,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        InkWell(
-                          onTap: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => RecipietempWidget(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'View',
-                            style: FlutterFlowTheme.subtitle1.override(
-                              fontFamily: 'Poppins',
-                              color: Color(0xFF6A9106),
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              'Dish name',
+                              style: FlutterFlowTheme.title1.override(
+                                fontFamily: 'Poppins',
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Type',
+                            style: FlutterFlowTheme.subtitle2,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'Fat Content',
+                            style: FlutterFlowTheme.bodyText1,
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            child: Text(
+                              'High',
+                              style: FlutterFlowTheme.bodyText1.override(
+                                fontFamily: 'Poppins',
+                                color: FlutterFlowTheme.primaryColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => RecipietempWidget(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'View',
+                              style: FlutterFlowTheme.subtitle1.override(
+                                fontFamily: 'Poppins',
+                                color: Color(0xFF6A9106),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

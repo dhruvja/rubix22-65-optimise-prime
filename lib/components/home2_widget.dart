@@ -1,3 +1,4 @@
+import '../calender_main/calender_main_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../kitchen/kitchen_widget.dart';
@@ -237,10 +238,20 @@ class _Home2WidgetState extends State<Home2Widget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 4, 4),
-                    child: Icon(
-                      Icons.chevron_right_rounded,
-                      color: Color(0xFF57636C),
-                      size: 24,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecipiesearchWidget(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.chevron_right_rounded,
+                        color: Color(0xFF57636C),
+                        size: 24,
+                      ),
                     ),
                   ),
                 ],
@@ -307,10 +318,20 @@ class _Home2WidgetState extends State<Home2Widget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 0, 4, 4),
-                    child: Icon(
-                      Icons.chevron_right_rounded,
-                      color: Color(0xFF57636C),
-                      size: 24,
+                    child: InkWell(
+                      onTap: () async {
+                        await Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CalenderMainWidget(),
+                          ),
+                        );
+                      },
+                      child: Icon(
+                        Icons.chevron_right_rounded,
+                        color: Color(0xFF57636C),
+                        size: 24,
+                      ),
                     ),
                   ),
                 ],
