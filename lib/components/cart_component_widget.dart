@@ -62,10 +62,10 @@ class _CartComponentWidgetState extends State<CartComponentWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
+                                EdgeInsetsDirectional.fromSTEB(90, 0, 0, 0),
                             child: Icon(
-                              Icons.settings_outlined,
-                              color: Colors.black,
+                              Icons.circle,
+                              color: Colors.red,
                               size: 24,
                             ),
                           ),
