@@ -1,5 +1,4 @@
-import '../components/food1_widget.dart';
-import '../components/stat_widget.dart';
+import '../components/cart_component_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -33,30 +32,11 @@ class _CartWidgetState extends State<CartWidget> {
         ),
       ),
       body: SafeArea(
-        child: Row(
+        child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 1,
-              decoration: BoxDecoration(
-                color: Color(0xFF00063D),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFF26BFA4),
-                  )
-                ],
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    StatWidget(),
-                    Food1Widget(),
-                  ],
-                ),
-              ),
+            Expanded(
+              child: CartComponentWidget(),
             ),
           ],
         ),

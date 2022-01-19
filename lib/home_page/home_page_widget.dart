@@ -22,15 +22,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+          padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              StatWidget(),
-              Expanded(
-                child: Home2Widget(),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                    child: StatWidget(),
+                  ),
+                ],
               ),
+              Home2Widget(),
             ],
           ),
         ),

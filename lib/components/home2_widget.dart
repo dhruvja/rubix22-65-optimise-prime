@@ -1,7 +1,7 @@
-import '../calender_main/calender_main_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../kitchen/kitchen_widget.dart';
+import '../main.dart';
 import '../recipiesearch/recipiesearch_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -323,7 +323,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CalenderMainWidget(),
+                            builder: (context) =>
+                                NavBarPage(initialPage: 'calender_main'),
                           ),
                         );
                       },

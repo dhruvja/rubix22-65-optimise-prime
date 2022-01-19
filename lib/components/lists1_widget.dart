@@ -21,10 +21,11 @@ class _Lists1WidgetState extends State<Lists1Widget> {
         SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 0.95,
-                height: MediaQuery.of(context).size.height * 1,
+                height: MediaQuery.of(context).size.height * 0.6,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.tertiaryColor,
                 ),
@@ -63,6 +64,8 @@ class _Lists1WidgetState extends State<Lists1Widget> {
                                   SingleChildScrollView(
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [

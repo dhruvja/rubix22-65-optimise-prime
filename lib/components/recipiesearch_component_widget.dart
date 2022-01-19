@@ -1,6 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../recipietemp/recipietemp_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -121,7 +121,8 @@ class _RecipiesearchComponentWidgetState
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RecipietempWidget(),
+                                  builder: (context) =>
+                                      NavBarPage(initialPage: 'recipietemp'),
                                 ),
                               );
                             },
