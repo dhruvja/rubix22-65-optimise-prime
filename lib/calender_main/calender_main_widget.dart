@@ -3,7 +3,7 @@ import 'package:makirasoii2/components/empty.dart';
 import 'package:makirasoii2/components/stat_widget.dart';
 
 import '../components/calender_widget.dart';
-import '../components/lists2_widget.dart';
+import '../components/lists1_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';

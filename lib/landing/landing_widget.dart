@@ -1,8 +1,7 @@
-import '../cart/cart_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../scan1/scan1_widget.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -119,7 +118,8 @@ class _LandingWidgetState extends State<LandingWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Scan1Widget(),
+                                                    NavBarPage(
+                                                        initialPage: 'scan1'),
                                               ),
                                             );
                                           },
@@ -231,7 +231,8 @@ class _LandingWidgetState extends State<LandingWidget> {
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
-                                                    CartWidget(),
+                                                    NavBarPage(
+                                                        initialPage: 'cart'),
                                               ),
                                             );
                                           },
@@ -338,8 +339,15 @@ class _LandingWidgetState extends State<LandingWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0, 16, 0, 0),
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async{
+                                           await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    NavBarPage(
+                                                        initialPage: 'HomePage'),
+                                              ),
+                                            );
                                           },
                                           text: 'Explore Now',
                                           options: FFButtonOptions(

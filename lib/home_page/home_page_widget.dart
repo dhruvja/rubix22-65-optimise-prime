@@ -1,4 +1,3 @@
-import '../components/home1_widget.dart';
 import '../components/home2_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -21,63 +20,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  StatWidget(),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(1, 1, 1, 1),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.98,
-                          height: 450,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.tertiaryColor,
-                          ),
-                          child: Home2Widget(),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Container(
-                          width: 600,
-                          height: 120,
-                          decoration: BoxDecoration(
-                            color: Color(0xFFEEEEEE),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Home1Widget(),
-                              ),
-                              Expanded(
-                                child: Home1Widget(),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
+      body: SingleChildScrollView(
+              child: SafeArea(
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                      child: StatWidget(),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+                Home2Widget(),
+              ],
+            ),
           ),
         ),
       ),

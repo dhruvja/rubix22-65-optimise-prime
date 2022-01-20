@@ -6,11 +6,10 @@ import '../cart/cart_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../home_page/home_page_widget.dart';
 import '../kitchen/kitchen_widget.dart';
 import '../landing/landing_widget.dart';
+import '../main.dart';
 import '../recipiesearch/recipiesearch_widget.dart';
-import '../scan1/scan1_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -44,7 +43,8 @@ class _LinkWidgetState extends State<LinkWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomePageWidget(),
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'HomePage'),
                         ),
                       );
                     },
@@ -106,7 +106,7 @@ class _LinkWidgetState extends State<LinkWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CartWidget(),
+                          builder: (context) => NavBarPage(initialPage: 'cart'),
                         ),
                       );
                     },
@@ -199,7 +199,8 @@ class _LinkWidgetState extends State<LinkWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Scan1Widget(),
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'scan1'),
                         ),
                       );
                     },
@@ -292,7 +293,8 @@ class _LinkWidgetState extends State<LinkWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CalenderMainWidget(),
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'calender_main'),
                         ),
                       );
                     },
@@ -323,7 +325,8 @@ class _LinkWidgetState extends State<LinkWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => HomePageWidget(),
+                          builder: (context) =>
+                              NavBarPage(initialPage: 'HomePage'),
                         ),
                       );
                     },

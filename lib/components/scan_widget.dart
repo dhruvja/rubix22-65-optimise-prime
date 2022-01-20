@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,6 +26,7 @@ class _ScanWidgetState extends State<ScanWidget> {
   TextEditingController textController1;
   TextEditingController textController2;
   TextEditingController textController3;
+  bool checkboxListTileValue;
   int countControllerValue;
 
   DateTime expiry_date = DateTime.now();
@@ -95,7 +97,7 @@ class _ScanWidgetState extends State<ScanWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 160,
+      height: 200,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.tertiaryColor,
       ),
@@ -123,8 +125,11 @@ class _ScanWidgetState extends State<ScanWidget> {
                           controller: textController1,
                           obscureText: false,
                           decoration: InputDecoration(
-                            hintText: 'Item name',
-                            hintStyle: FlutterFlowTheme.title3,
+                            labelText: 'Cost',
+                            labelStyle: FlutterFlowTheme.bodyText1.override(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                            ),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
                                 color: Color(0xFF00063D),
@@ -148,7 +153,10 @@ class _ScanWidgetState extends State<ScanWidget> {
                             contentPadding:
                                 EdgeInsetsDirectional.fromSTEB(5, 15, 5, 5),
                           ),
-                          style: FlutterFlowTheme.title3,
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ],
