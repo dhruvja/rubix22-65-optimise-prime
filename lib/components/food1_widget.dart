@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,25 +65,25 @@ class Food1Widget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Row(
+                      //   mainAxisSize: MainAxisSize.max,
+                      //   children: [
+                      //     Text(
+                      //       'Expired',
+                      //       style: FlutterFlowTheme.bodyText1.override(
+                      //         fontFamily: 'Lato',
+                      //         color: Color(0xFFE21A1A),
+                      //         fontSize: 18,
+                      //         fontWeight: FontWeight.w600,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Expired',
-                            style: FlutterFlowTheme.bodyText1.override(
-                              fontFamily: 'Lato',
-                              color: Color(0xFFE21A1A),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            'Food name',
+                            values['item_name'],
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Lato',
                               color: Color(0xFF244F02),
@@ -96,7 +97,7 @@ class Food1Widget extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'StoredDate',
+                            'Expiry Date',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Lato',
                               fontSize: 10,
@@ -105,7 +106,7 @@ class Food1Widget extends StatelessWidget {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                             child: Text(
-                              'DD/MM/YY',
+                              values['expiry_date'].toString(),
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Open Sans',
                                 fontSize: 10,
@@ -119,7 +120,7 @@ class Food1Widget extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Expired on',
+                            'Stored on',
                             style: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
                               color: Color(0xFFDA1111),
@@ -129,7 +130,7 @@ class Food1Widget extends StatelessWidget {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                             child: Text(
-                              'dd/mm/yy',
+                              values['created_date'].toString(),
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.primaryColor,
@@ -149,11 +150,46 @@ class Food1Widget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Text(
-                        'Consumed',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.primaryColor,
+                      InkWell(
+                        onTap: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Consumed'),
+                                content:
+                                    Text('Click Ok if the item is consumed.'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () async {
+                                      Navigator.pop(alertDialogContext);
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => NavBarPage(
+                                              initialPage: 'recipietemp'),
+                                        ),
+                                      );
+                                      ;
+                                    },
+                                    child: Text('Confirm'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: Text(
+                          'Consumed',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: FlutterFlowTheme.primaryColor,
+                          ),
                         ),
                       ),
                       Row(
@@ -170,11 +206,46 @@ class Food1Widget extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text(
-                        'Donate',
-                        style: FlutterFlowTheme.bodyText1.override(
-                          fontFamily: 'Poppins',
-                          color: Color(0xFF244F02),
+                      InkWell(
+                        onTap: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (alertDialogContext) {
+                              return AlertDialog(
+                                title: Text('Donate items'),
+                                content: Text(
+                                    'Do you really want to donate the items'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(alertDialogContext),
+                                    child: Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () async {
+                                      Navigator.pop(alertDialogContext);
+                                      await Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              NavBarPage(initialPage: 'scan1'),
+                                        ),
+                                      );
+                                      ;
+                                    },
+                                    child: Text('Confirm'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: Text(
+                          'Donate',
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            color: Color(0xFF244F02),
+                          ),
                         ),
                       ),
                     ],

@@ -1,3 +1,5 @@
+import 'package:makirasoii2/recipietemp/recipietemp_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
@@ -15,7 +17,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.8,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 120,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
@@ -46,8 +48,8 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                         color: Color(0xFFEEEEEE),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/try1.jpg',
+                          image: Image.network(
+                            values['image'],
                           ).image,
                         ),
                         borderRadius: BorderRadius.circular(0),
@@ -70,10 +72,11 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              'Dish name',
+                              values['title'],
+                              // "sdfas",
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Poppins',
-                                fontSize: 20,
+                                fontSize: 15,
                               ),
                             ),
                           ],
@@ -83,7 +86,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Type',
+                            "Calories: " + values['calories'].toString(),
                             style: FlutterFlowTheme.subtitle2,
                           ),
                         ],
@@ -99,7 +102,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Text(
-                              'High',
+                              values['fat'].toString(),
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.primaryColor,
@@ -114,11 +117,13 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () async {
+                              SharedPreferences prefs = await SharedPreferences.getInstance();
+                              prefs.setInt("id",values['id']);
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      NavBarPage(initialPage: 'recipietemp'),
+                                      RecipietempWidget(),
                                 ),
                               );
                             },

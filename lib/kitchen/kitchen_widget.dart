@@ -1,3 +1,6 @@
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:makirasoii2/scan1/scan1_widget.dart';
+
 import '../components/lists1_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -79,6 +82,51 @@ try {
     }
   }
 
+  // void LocalNotification() {
+
+  // static void initialize(context) {
+  //   final InitializationSettings initializationSettings =
+  //       InitializationSettings(
+  //           android: AndroidInitializationSettings("@mipmap/ic_launcher"));
+
+  //   // _notificationPlugin.initialize(initializationSettings,
+  //   //     onSelectNotification: (String route) async {
+  //   //   if (route != null) {
+  //   //     Navigator.of(context).pushNamed(route);
+  //   //   }
+  //   // });
+  // }
+
+  void sendNotifs() async {
+    try {
+      final FlutterLocalNotificationsPlugin _notificationPlugin =
+      FlutterLocalNotificationsPlugin();
+
+      final id = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+
+      final NotificationDetails notificationDetails = NotificationDetails(
+          android: AndroidNotificationDetails("jobista", "jobista channel",
+              importance: Importance.max, priority: Priority.max));
+      await _notificationPlugin.show(id, "yo bro",
+          "wassup", notificationDetails,
+          payload: "9");
+    } on Exception catch (e) {
+      print(e);
+    }
+  }
+}
+
+  Future notificationDetails() async{
+    return NotificationDetails(
+      android: AndroidNotificationDetails(
+        'Channel Id',
+        'Channel Name',
+        importance: Importance.max 
+      ),
+      iOS: IOSNotificationDetails(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,8 +140,15 @@ try {
       ),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('FloatingActionButton pressed ...');
+        onPressed: () async{
+          // await Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //           builder: (context) =>
+          //               Scan1Widget(),
+          //         ),
+          //       );
+          sendNotifs();
         },
         backgroundColor: FlutterFlowTheme.primaryColor,
         elevation: 8,
@@ -115,15 +170,15 @@ try {
           color: Color(0xFFEEEEEE),
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            StatWidget(),
-            Expanded(
-              child: 
-                present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
-            ),
-          ],
-        ),
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              StatWidget(),
+              Expanded(
+                child: 
+        present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
+              ),
+            ],
+          ),
       ),
             ],
           ),

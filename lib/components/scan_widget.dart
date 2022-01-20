@@ -1,4 +1,5 @@
 import 'package:makirasoii2/cart/cart_widget.dart';
+import 'package:makirasoii2/kitchen/kitchen_widget.dart';
 
 import '../flutter_flow/flutter_flow_count_controller.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
@@ -72,7 +73,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        CartWidget(),
+                        KitchenWidget(),
                   ),
                 );
         } else {
@@ -125,7 +126,7 @@ class _ScanWidgetState extends State<ScanWidget> {
                           controller: textController1,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Cost',
+                            hintText: 'Item Name',
                             labelStyle: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
                               fontWeight: FontWeight.w500,
@@ -243,41 +244,67 @@ class _ScanWidgetState extends State<ScanWidget> {
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 140,
+                        width: 200,
                         height: 30,
                         decoration: BoxDecoration(
-                          color: FlutterFlowTheme.tertiaryColor,
+                          color: Color(0x00EEEEEE),
                         ),
-                        child: FFButtonWidget(
-                          onPressed: () {
-                            showDatePicker(
+                        child: TextFormField(
+                          readOnly: true,
+                          controller: textController3,
+                          obscureText: false,
+                          onTap: (){
+                              print("hi");
+                              showDatePicker(
                               context: context,
                               initialDate: DateTime.now(),
                               firstDate: DateTime.now(),
                               lastDate: DateTime(2023),
                             ).then((date) {
+                              var formatter =
+                                                  DateFormat('dd-MM-yyyy');
+                                              String formatted =
+                                                  formatter.format(date);
                               setState(() {
                                 expiry_date = date;
+                                textController3.text = formatted;
                               });
                             });
-                          },
-                          text: expiry_date.toString(),
-                          options: FFButtonOptions(
-                            width: 80,
-                            height: 40,
-                            color: FlutterFlowTheme.primaryColor,
-                            textStyle: FlutterFlowTheme.subtitle2.override(
+                            },
+                          decoration: InputDecoration(
+                            hintText: 'Expiry Date',
+                            labelStyle: FlutterFlowTheme.bodyText1.override(
                               fontFamily: 'Poppins',
-                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
                             ),
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFF00063D),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
                             ),
-                            borderRadius: 4,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0xFF00063D),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            contentPadding:
+                                EdgeInsetsDirectional.fromSTEB(5, 15, 5, 5),
+                          ),
+                          style: FlutterFlowTheme.bodyText1.override(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
