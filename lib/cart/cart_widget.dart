@@ -18,6 +18,13 @@ class _CartWidgetState extends State<CartWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.primaryColor,
+        automaticallyImplyLeading: true,
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
