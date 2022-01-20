@@ -3,14 +3,14 @@ import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Expire2CopyWidget extends StatefulWidget {
-  const Expire2CopyWidget({Key key}) : super(key: key);
+class Expire3Widget extends StatefulWidget {
+  const Expire3Widget({Key key}) : super(key: key);
 
   @override
-  _Expire2CopyWidgetState createState() => _Expire2CopyWidgetState();
+  _Expire3WidgetState createState() => _Expire3WidgetState();
 }
 
-class _Expire2CopyWidgetState extends State<Expire2CopyWidget> {
+class _Expire3WidgetState extends State<Expire3Widget> {
   @override
   Widget build(BuildContext context) {
     return Container(

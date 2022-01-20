@@ -1,3 +1,4 @@
+import '../components/expire4_widget.dart';
 import '../components/food4_widget.dart';
 import '../components/recomend_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
@@ -138,6 +139,11 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                               alignment: AlignmentDirectional(0, 0),
                               child: RecomendWidget(),
                             ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(),
+                            child: Expire4Widget(),
                           ),
                           Food4Widget(),
                         ],
