@@ -26,7 +26,7 @@ class _Home1WidgetState extends State<Home1Widget> {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.asset(
-              'assets/images/try1.jpg',
+              'assets/images/panner-cover.jpg',
             ).image,
           ),
           boxShadow: [
@@ -45,7 +45,7 @@ class _Home1WidgetState extends State<Home1Widget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Burger Plate for two',
+                'Panner Kofta',
                 textAlign: TextAlign.start,
                 style: FlutterFlowTheme.title3.override(
                   fontFamily: 'Poppins',
@@ -59,7 +59,8 @@ class _Home1WidgetState extends State<Home1Widget> {
                     'A delicious and filling combo with two burger plates for an amazing price.',
                     style: FlutterFlowTheme.bodyText2.override(
                       fontFamily: 'Poppins',
-                      color: Color(0xB4FFFFFF),
+                      color: FlutterFlowTheme.tertiaryColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -105,8 +106,8 @@ class _Home1WidgetState extends State<Home1Widget> {
                           '+extra cheese',
                           style: FlutterFlowTheme.bodyText1.override(
                             fontFamily: 'Poppins',
-                            color: Color(0xB3FFFFFF),
-                            fontWeight: FontWeight.w600,
+                            color: FlutterFlowTheme.tertiaryColor,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
