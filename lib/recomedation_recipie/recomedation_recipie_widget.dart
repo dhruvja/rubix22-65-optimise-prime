@@ -31,6 +31,23 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
             Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 130, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: AlignmentDirectional(0.15, 0),
+                        child: Text(
+                          'Recipie Recomendation',
+                          style: FlutterFlowTheme.title3,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 60,
