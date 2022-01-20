@@ -10,6 +10,7 @@ import 'cart/cart_widget.dart';
 import 'scan1/scan1_widget.dart';
 import 'recipietemp/recipietemp_widget.dart';
 import 'calender_main/calender_main_widget.dart';
+import 'expired/expired_widget.dart';
 
 void main() async {
   runApp(MyApp());
@@ -65,6 +66,7 @@ class _NavBarPageState extends State<NavBarPage> {
       'scan1': Scan1Widget(),
       'recipietemp': RecipietempWidget(),
       'calender_main': CalenderMainWidget(),
+      'Expired': ExpiredWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -117,6 +119,14 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Calender',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.shopping_cart,
+              size: 24,
+            ),
+            label: 'cart',
             tooltip: '',
           )
         ],

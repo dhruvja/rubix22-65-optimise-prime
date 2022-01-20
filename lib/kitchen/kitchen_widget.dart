@@ -40,25 +40,12 @@ class _KitchenWidgetState extends State<KitchenWidget> {
         ),
       ),
       body: SafeArea(
-        child: Row(
+        child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 1,
-              decoration: BoxDecoration(
-                color: Color(0xFFEEEEEE),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  StatWidget(),
-                  Expanded(
-                    child: Lists1Widget(),
-                  ),
-                ],
-              ),
+            StatWidget(),
+            Expanded(
+              child: Lists1Widget(),
             ),
           ],
         ),

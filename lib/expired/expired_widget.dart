@@ -1,17 +1,18 @@
-import '../components/cart_component_widget.dart';
+import '../components/expire2_widget.dart';
+import '../components/food1_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CartWidget extends StatefulWidget {
-  const CartWidget({Key key}) : super(key: key);
+class ExpiredWidget extends StatefulWidget {
+  const ExpiredWidget({Key key}) : super(key: key);
 
   @override
-  _CartWidgetState createState() => _CartWidgetState();
+  _ExpiredWidgetState createState() => _ExpiredWidgetState();
 }
 
-class _CartWidgetState extends State<CartWidget> {
+class _ExpiredWidgetState extends State<ExpiredWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -44,18 +45,9 @@ class _CartWidgetState extends State<CartWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional(-0.95, 0),
-                    child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                      child: Text(
-                        'My personal cart',
-                        style: FlutterFlowTheme.bodyText1,
-                      ),
-                    ),
-                  ),
+                  Expire2Widget(),
                   Expanded(
-                    child: CartComponentWidget(),
+                    child: Food1Widget(),
                   ),
                 ],
               ),
