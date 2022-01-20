@@ -1,5 +1,6 @@
 import '../components/expire4_widget.dart';
 import '../components/home1_widget.dart';
+import '../components/inglist_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,7 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
                     ],
                   ),
                 ),
+                InglistWidget(),
                 Expire4Widget(),
                 Home1Widget(),
               ],
