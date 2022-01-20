@@ -16,10 +16,10 @@ class _StatWidgetState extends State<StatWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.9,
+      width: MediaQuery.of(context).size.width,
       height: 100,
       decoration: BoxDecoration(
-        color: Color(0xFF00063D),
+        color: FlutterFlowTheme.tertiaryColor,
         borderRadius: BorderRadius.circular(0),
       ),
       child: Row(

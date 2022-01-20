@@ -1,3 +1,4 @@
+import '../components/expire2_copy_widget.dart';
 import '../components/lists1_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -43,6 +44,7 @@ class _KitchenWidgetState extends State<KitchenWidget> {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
+            Expire2CopyWidget(),
             StatWidget(),
             Expanded(
               child: Lists1Widget(),

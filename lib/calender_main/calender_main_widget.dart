@@ -30,6 +30,7 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
                 height: 500,
                 decoration: BoxDecoration(
                   color: Color(0xFFEEEEEE),
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
