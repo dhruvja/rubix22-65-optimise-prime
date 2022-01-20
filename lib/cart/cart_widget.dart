@@ -109,8 +109,30 @@ try {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Expanded(
-              child: CartComponentWidget(),
+            Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 1,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.tertiaryColor,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(-0.95, 0),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                      child: Text(
+                        'My personal cart',
+                        style: FlutterFlowTheme.bodyText1,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: CartComponentWidget(),
+                  ),
+                ],
+              ),
             ),
           ],
         ),

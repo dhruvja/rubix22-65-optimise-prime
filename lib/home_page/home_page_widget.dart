@@ -1,3 +1,4 @@
+import '../components/home1_widget.dart';
 import '../components/home2_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -38,6 +39,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ],
                 ),
                 Home2Widget(),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                  child: Home1Widget(),
+                ),
               ],
             ),
           ),

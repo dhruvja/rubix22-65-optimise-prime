@@ -1,6 +1,7 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:makirasoii2/scan1/scan1_widget.dart';
 
+import '../components/expire3_widget.dart';
 import '../components/lists1_widget.dart';
 import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -114,7 +115,6 @@ try {
       print(e);
     }
   }
-}
 
   Future notificationDetails() async{
     return NotificationDetails(
@@ -141,14 +141,13 @@ try {
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
         onPressed: () async{
-          // await Navigator.push(
-          //         context,
-          //         MaterialPageRoute(
-          //           builder: (context) =>
-          //               Scan1Widget(),
-          //         ),
-          //       );
-          sendNotifs();
+          await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        Scan1Widget(),
+                  ),
+                );
         },
         backgroundColor: FlutterFlowTheme.primaryColor,
         elevation: 8,
@@ -159,30 +158,17 @@ try {
         ),
       ),
       body: SafeArea(
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-      Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height * 1,
-        decoration: BoxDecoration(
-          color: Color(0xFFEEEEEE),
-        ),
         child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              StatWidget(),
-              Expanded(
-                child: 
-        present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
-              ),
-            ],
-          ),
-      ),
-            ],
-          ),
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Expire3Widget(),
+            StatWidget(),
+            Expanded(
+              child: present ? Lists1Widget(thisWeek: thisWeek, nextWeek: nextWeek, later: later) : Text(""),
+            ),
+          ],
         ),
+      ),
     );
   }
 }

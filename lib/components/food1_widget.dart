@@ -16,6 +16,7 @@ class Food1Widget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 5, 5),

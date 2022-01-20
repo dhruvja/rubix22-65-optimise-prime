@@ -1,4 +1,6 @@
+import '../components/expire4_widget.dart';
 import '../components/food4_widget.dart';
+import '../components/recomend_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -29,6 +31,7 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
           children: [
             Column(
               mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -39,36 +42,79 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.tertiaryColor,
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  10, 10, 10, 10),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 5, 0),
-                                        child: FlutterFlowDropDown(
-                                          initialOption: dropDownValue1 ??=
-                                              'Expired',
+                      SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.tertiaryColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 10,
+                                    color: Color(0xFFDBE2EF),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(0),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10, 10, 10, 10),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 5, 0),
+                                          child: FlutterFlowDropDown(
+                                            initialOption: dropDownValue1 ??=
+                                                'Expired',
+                                            options:
+                                                ['Expired', 'Active'].toList(),
+                                            onChanged: (val) => setState(
+                                                () => dropDownValue1 = val),
+                                            width: 160,
+                                            height: 50,
+                                            textStyle: FlutterFlowTheme
+                                                .bodyText1
+                                                .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.black,
+                                            ),
+                                            hintText: 'Please select...',
+                                            fillColor: Colors.white,
+                                            elevation: 0,
+                                            borderColor: Colors.black,
+                                            borderWidth: 0,
+                                            borderRadius: 4,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12, 4, 12, 4),
+                                            hidesUnderline: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FlutterFlowDropDown(
+                                          initialOption: dropDownValue2 ??=
+                                              'Veggies',
                                           options:
-                                              ['Expired', 'Active'].toList(),
+                                              ['Veggies', 'Non veg'].toList(),
                                           onChanged: (val) => setState(
-                                              () => dropDownValue1 = val),
+                                              () => dropDownValue2 = val),
                                           width: 160,
                                           height: 50,
                                           textStyle: FlutterFlowTheme.bodyText1
@@ -78,53 +124,37 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                           ),
                                           hintText: 'Please select...',
                                           fillColor: Colors.white,
-                                          elevation: 0,
+                                          elevation: 2,
                                           borderColor: Colors.black,
                                           borderWidth: 0,
-                                          borderRadius: 4,
+                                          borderRadius: 3,
                                           margin:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12, 4, 12, 4),
                                           hidesUnderline: true,
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FlutterFlowDropDown(
-                                        initialOption: dropDownValue2 ??=
-                                            'Veggies',
-                                        options:
-                                            ['Veggies', 'Non veg'].toList(),
-                                        onChanged: (val) => setState(
-                                            () => dropDownValue2 = val),
-                                        width: 160,
-                                        height: 50,
-                                        textStyle:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Poppins',
-                                          color: Colors.black,
-                                        ),
-                                        hintText: 'Please select...',
-                                        fillColor: Colors.white,
-                                        elevation: 2,
-                                        borderColor: Colors.black,
-                                        borderWidth: 0,
-                                        borderRadius: 3,
-                                        margin: EdgeInsetsDirectional.fromSTEB(
-                                            12, 4, 12, 4),
-                                        hidesUnderline: true,
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                          Food4Widget(),
-                        ],
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(),
+                              child: Align(
+                                alignment: AlignmentDirectional(0, 0),
+                                child: RecomendWidget(),
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(),
+                              child: Expire4Widget(),
+                            ),
+                            Food4Widget(),
+                          ],
+                        ),
                       ),
                     ],
                   ),

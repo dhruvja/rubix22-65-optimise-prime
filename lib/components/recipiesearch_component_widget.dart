@@ -3,6 +3,7 @@ import 'package:makirasoii2/recipietemp/recipietemp_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,7 +25,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               blurRadius: 5,
-              color: FlutterFlowTheme.primaryColor,
+              color: Color(0xFFDBE2EF),
             )
           ],
           borderRadius: BorderRadius.circular(20),
@@ -52,6 +53,12 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                             values['image'],
                           ).image,
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 5,
+                            color: Color(0xFFAEE1E1),
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(0),
                       ),
                     ),
@@ -94,7 +101,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
+                          AutoSizeText(
                             'Fat Content',
                             style: FlutterFlowTheme.bodyText1,
                           ),
@@ -127,7 +134,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                                 ),
                               );
                             },
-                            child: Text(
+                            child: AutoSizeText(
                               'View',
                               style: FlutterFlowTheme.subtitle1.override(
                                 fontFamily: 'Poppins',

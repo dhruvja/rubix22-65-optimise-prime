@@ -15,11 +15,40 @@ class RecipiesearchWidget extends StatefulWidget {
 }
 
 class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
-  TextEditingController textController;
+  TextEditingController textController = TextEditingController();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   var items;
   bool present = false;
+  bool search = false;
+
+  void initState(){
+    super.initState();
+    recommend();
+  }
+
+  void recommend() async{
+    try {
+      String url = "http://192.168.0.192:5000/" + "recommend";
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        // print(response.body);
+        var data = json.decode(response.body);
+        print(data);
+        setState(() {
+          items = data;
+          present = true;
+        });
+      }
+    } catch (e) {
+      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text('No Interent Found, try again'),
+            backgroundColor: Colors.redAccent),
+      );
+    }
+  }
 
   void getItems() async {
     try {
@@ -34,6 +63,7 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
         setState(() {
           items = data['results'];
           present = true;
+          search = true;
         });
       }
     } catch (e) {
@@ -44,12 +74,6 @@ class _RecipiesearchWidgetState extends State<RecipiesearchWidget> {
             backgroundColor: Colors.redAccent),
       );
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    textController = TextEditingController();
   }
 
   @override
