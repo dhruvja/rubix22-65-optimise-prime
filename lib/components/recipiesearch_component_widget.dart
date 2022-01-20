@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -19,14 +20,14 @@ class _RecipiesearchComponentWidgetState
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.8,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 120,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
             BoxShadow(
               blurRadius: 5,
-              color: FlutterFlowTheme.primaryColor,
+              color: Color(0xFFDBE2EF),
             )
           ],
           borderRadius: BorderRadius.circular(20),
@@ -54,6 +55,12 @@ class _RecipiesearchComponentWidgetState
                             'assets/images/try1.jpg',
                           ).image,
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 5,
+                            color: Color(0xFFAEE1E1),
+                          )
+                        ],
                         borderRadius: BorderRadius.circular(0),
                       ),
                     ),
@@ -73,7 +80,7 @@ class _RecipiesearchComponentWidgetState
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Text(
+                            AutoSizeText(
                               'Dish name',
                               style: FlutterFlowTheme.title1.override(
                                 fontFamily: 'Poppins',
@@ -86,7 +93,7 @@ class _RecipiesearchComponentWidgetState
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
+                          AutoSizeText(
                             'Type',
                             style: FlutterFlowTheme.subtitle2,
                           ),
@@ -95,14 +102,14 @@ class _RecipiesearchComponentWidgetState
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
+                          AutoSizeText(
                             'Fat Content',
                             style: FlutterFlowTheme.bodyText1,
                           ),
                           Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                            child: Text(
+                            child: AutoSizeText(
                               'High',
                               style: FlutterFlowTheme.bodyText1.override(
                                 fontFamily: 'Poppins',
@@ -126,7 +133,7 @@ class _RecipiesearchComponentWidgetState
                                 ),
                               );
                             },
-                            child: Text(
+                            child: AutoSizeText(
                               'View',
                               style: FlutterFlowTheme.subtitle1.override(
                                 fontFamily: 'Poppins',
