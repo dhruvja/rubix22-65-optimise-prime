@@ -86,6 +86,13 @@ class _CalenderMainWidgetState extends State<CalenderMainWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.primaryColor,
+        automaticallyImplyLeading: true,
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
       backgroundColor: Color(0xFFF5F5F5),
       body: SingleChildScrollView(
         child: SafeArea(

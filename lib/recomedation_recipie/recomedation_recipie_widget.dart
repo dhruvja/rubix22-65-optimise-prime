@@ -2,6 +2,7 @@ import 'package:makirasoii2/components/recipiesearch_component_widget.dart';
 
 import '../components/expire4_widget.dart';
 import '../components/home1_widget.dart';
+import '../components/inglist_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,13 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.primaryColor,
+        automaticallyImplyLeading: true,
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -89,6 +97,7 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
                     ),
                   ),
                   Expire4Widget(),
+                  InglistWidget(),
                   if(present)
                      if(present)
                         ...(items).map((item){
