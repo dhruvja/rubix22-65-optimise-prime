@@ -27,6 +27,13 @@ class _Home1WidgetState extends State<Home1Widget> {
             'assets/images/try1.jpg',
           ).image,
         ),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 5,
+            color: Color(0xFFDBE2EF),
+          )
+        ],
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 16),
