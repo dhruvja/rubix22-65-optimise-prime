@@ -134,9 +134,28 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'About Recipie',
-                                              style: FlutterFlowTheme.title3,
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  'About Recipie',
+                                                  style:
+                                                      FlutterFlowTheme.title3,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(20, 0, 0, 0),
+                                                  child: Icon(
+                                                    Icons.mic,
+                                                    color: FlutterFlowTheme
+                                                        .primaryColor,
+                                                    size: 24,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                             Container(
                                               width: MediaQuery.of(context)
