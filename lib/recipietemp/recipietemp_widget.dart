@@ -60,6 +60,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
     setState(() {
       recipeInfo = data;
       present = true;
+      textController.text = data['summary'];
     });
   }
 
@@ -75,7 +76,8 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
         elevation: 4,
       ),
       backgroundColor: Color(0xFFF5F5F5),
-      body: SafeArea(
+      body: 
+      SafeArea(
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -100,8 +102,8 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                       color: Color(0xFFEEEEEE),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: Image.asset(
-                          'assets/images/try1.jpg',
+                        image: Image.network(
+                          present ? recipeInfo['image'] : "https://spoonacular.com/recipeImages/716429-556x370.jpg",
                         ).image,
                       ),
                       boxShadow: [
@@ -123,7 +125,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
                     child: Text(
-                      'Recipie Name',
+                      recipeInfo['title'],
                       style: FlutterFlowTheme.title1.override(
                         fontFamily: 'Poppins',
                         fontSize: 20,
@@ -235,6 +237,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                                               ),
                                               style:
                                                   FlutterFlowTheme.bodyText1,
+                                              maxLines: 5
                                             ),
                                           ),
                                         ),

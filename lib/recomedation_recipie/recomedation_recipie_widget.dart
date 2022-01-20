@@ -1,6 +1,7 @@
+import 'package:makirasoii2/components/recipiesearch_component_widget.dart';
+
 import '../components/expire4_widget.dart';
 import '../components/home1_widget.dart';
-import '../components/recomend_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -18,19 +19,19 @@ class RecomedationRecipieWidget extends StatefulWidget {
 }
 
 class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
-  double sliderValue;
+  double sliderValue = 1;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   bool present = false;
+  var items;
 
   void initState(){
     super.initState();
-    recommendation();
+    recommendation(1);
   }
 
-  void recommendation() async{
-    sliderValue++;
-    String items = "apple,orange,eggs,carrot,cheese";
-    var url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients= " + items + "&number=" + sliderValue.toString() + "&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
+  void recommendation(int val) async{
+    String ingredients = "apple,orange,eggs,carrot,cheese";
+    var url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients= " + ingredients + "&ranking=" + val.toString() + "&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
     var response = await http.get(Uri.parse(url));
     var data = json.decode(response.body);
     print(data);
@@ -46,110 +47,58 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       body: SafeArea(
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SingleChildScrollView(
-              child: Column(
+        child: SingleChildScrollView(
+                  child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
                 mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 1,
+                    height: 60,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.tertiaryColor,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.tertiaryColor,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 10,
-                                      color: Color(0xFFDBE2EF),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(0),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 10, 10, 10),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Min',
-                                        style: FlutterFlowTheme.bodyText1,
-                                      ),
-                                      Slider(
-                                        activeColor:
-                                            FlutterFlowTheme.primaryColor,
-                                        inactiveColor: Color(0xFF9E9E9E),
-                                        min: 0,
-                                        max: 1,
-                                        value: sliderValue ??= 0,
-                                        label: sliderValue.toString(),
-                                        divisions: 1,
-                                        onChanged: (newValue) {
-                                          recommendation();
-                                          setState(
-                                              () => sliderValue = newValue);
-                                        },
-                                      ),
-                                      Text(
-                                        'Max',
-                                        style: FlutterFlowTheme.bodyText1,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                decoration: BoxDecoration(),
-                                child: Align(
-                                  alignment: AlignmentDirectional(0, 0),
-                                  child: RecomendWidget(),
-                                ),
-                              ),
-                              Container(
-                                width: MediaQuery.of(context).size.width,
-                                decoration: BoxDecoration(),
-                                child: Expire4Widget(),
-                              ),
-                              if(present)
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.9,
-                                decoration: BoxDecoration(),
-                      //           if(present)
-                      // ...(items).map((item){
-                      //   return RecipiesearchComponentWidget(item);
-                      // })
-                              ),
-                            ],
-                          ),
+                        Text(
+                          'Min',
+                          style: FlutterFlowTheme.bodyText1,
+                        ),
+                        Slider(
+                          activeColor: FlutterFlowTheme.primaryColor,
+                          inactiveColor: Color(0xFF9E9E9E),
+                          min: 1,
+                          max: 2,
+                          value: sliderValue,
+                          divisions: 1,
+                          onChanged: (newValue) {
+                            setState(() => sliderValue = newValue);
+                            recommendation(newValue.round());
+                          },
+                        ),
+                        Text(
+                          'Max',
+                          style: FlutterFlowTheme.bodyText1,
                         ),
                       ],
                     ),
                   ),
+                  Expire4Widget(),
+                  if(present)
+                     if(present)
+                        ...(items).map((item){
+                          return RecipiesearchComponentWidget(item);
+                        })
+
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

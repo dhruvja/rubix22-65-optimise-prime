@@ -1,3 +1,5 @@
+import 'package:makirasoii2/cart/cart_widget.dart';
+
 import '../components/expire2_widget.dart';
 import '../components/food1_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -55,8 +57,14 @@ class _ExpiredWidgetState extends State<ExpiredWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('FloatingActionButton pressed ...');
+        onPressed: () async{
+          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  CartWidget(),
+                            ),
+                          );
         },
         backgroundColor: Color(0xFFB4DFF5),
         elevation: 8,
