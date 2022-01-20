@@ -1,4 +1,5 @@
 import '../components/food4_widget.dart';
+import '../components/recomend_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -45,9 +46,16 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                         children: [
                           Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 80,
+                            height: 70,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.tertiaryColor,
+                              boxShadow: [
+                                BoxShadow(
+                                  blurRadius: 10,
+                                  color: Color(0xFFDBE2EF),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(0),
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -121,6 +129,14 @@ class _RecomedationWidgetState extends State<RecomedationWidget> {
                                   ),
                                 ],
                               ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(),
+                            child: Align(
+                              alignment: AlignmentDirectional(0, 0),
+                              child: RecomendWidget(),
                             ),
                           ),
                           Food4Widget(),
