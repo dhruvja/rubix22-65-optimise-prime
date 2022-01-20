@@ -35,6 +35,7 @@ class _Expire2WidgetState extends State<Expire2Widget> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Expired!',
@@ -42,6 +43,11 @@ class _Expire2WidgetState extends State<Expire2Widget> {
                       fontFamily: 'Poppins',
                       color: FlutterFlowTheme.secondaryColor,
                     ),
+                  ),
+                  Icon(
+                    Icons.delete,
+                    color: FlutterFlowTheme.primaryColor,
+                    size: 24,
                   ),
                 ],
               ),
