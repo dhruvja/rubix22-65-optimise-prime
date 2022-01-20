@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'donate_widget.dart';
+
 class Food1Widget extends StatelessWidget {
 
   var values;
@@ -214,8 +216,7 @@ class Food1Widget extends StatelessWidget {
                             builder: (alertDialogContext) {
                               return AlertDialog(
                                 title: Text('Donate items'),
-                                content: Text(
-                                    'Do you really want to donate the items'),
+                                content: DonateWidget(),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
