@@ -1,6 +1,7 @@
 import '../components/recipie2_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../link/link_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -81,12 +82,37 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
                   children: [
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-                      child: Text(
-                        'Recipie Name',
-                        style: FlutterFlowTheme.title1.override(
-                          fontFamily: 'Poppins',
-                          fontSize: 20,
-                        ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                            child: Text(
+                              'Recipie Name',
+                              style: FlutterFlowTheme.title1.override(
+                                fontFamily: 'Poppins',
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LinkWidget(),
+                                ),
+                              );
+                            },
+                            child: Icon(
+                              Icons.mic,
+                              color: FlutterFlowTheme.primaryColor,
+                              size: 28,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Padding(
