@@ -67,26 +67,40 @@ class _ExpiredWidgetState extends State<ExpiredWidget> {
         ),
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 1,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.tertiaryColor,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 1,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.tertiaryColor,
+                ),
+                child: SingleChildScrollView(
+                                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expire2Widget(),
+                      if (present)
+                        ...(items).map((item) {
+                          try {
+                            var date = DateTime.parse(item['expiry_date']);
+                            var formatter = DateFormat('dd-MM-yyyy');
+                            String formatted = formatter.format(date);
+                            item['expiry_date'] = formatted;
+                          } catch (e) {
+                            print(e);
+                          }
+
+                          return Food1Widget(item);
+                        })
+                    ],
+                  ),
+                ),
               ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Expire2Widget(),
-                  ...(items).map((item) {
-                    return Food1Widget(item);
-                  })
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

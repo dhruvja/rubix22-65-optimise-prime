@@ -26,7 +26,7 @@ class _StatWidgetState extends State<StatWidget> {
         );
       },
       child: Container(
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width * 0.9,
         height: 100,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
@@ -115,7 +115,7 @@ class _StatWidgetState extends State<StatWidget> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 150,
+                  width: 130,
                   height: 80,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.tertiaryColor,

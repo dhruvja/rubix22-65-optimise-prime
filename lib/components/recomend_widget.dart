@@ -15,7 +15,7 @@ class _RecomendWidgetState extends State<RecomendWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 30,
+      height: 50,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.tertiaryColor,
         boxShadow: [

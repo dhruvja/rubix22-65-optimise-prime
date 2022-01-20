@@ -15,7 +15,7 @@ class _Expire4WidgetState extends State<Expire4Widget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 120,
+      height: 150,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [

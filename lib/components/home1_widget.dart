@@ -1,3 +1,5 @@
+import 'package:makirasoii2/recomedation_recipie/recomedation_recipie_widget.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -76,7 +78,7 @@ class _Home1WidgetState extends State<Home1Widget> {
                             context,
                             MaterialPageRoute(
                               builder: (context) =>
-                                  NavBarPage(initialPage: 'recipietemp'),
+                                  RecomedationRecipieWidget(),
                             ),
                           );
                         },

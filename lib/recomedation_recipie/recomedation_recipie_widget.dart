@@ -5,6 +5,9 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class RecomedationRecipieWidget extends StatefulWidget {
   const RecomedationRecipieWidget({Key key}) : super(key: key);
@@ -17,6 +20,25 @@ class RecomedationRecipieWidget extends StatefulWidget {
 class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
   double sliderValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  bool present = false;
+
+  void initState(){
+    super.initState();
+    recommendation();
+  }
+
+  void recommendation() async{
+    sliderValue++;
+    String items = "apple,orange,eggs,carrot,cheese";
+    var url = "https://api.spoonacular.com/recipes/findByIngredients?ingredients= " + items + "&number=" + sliderValue.toString() + "&apiKey=8afaaf5604f4495fa9e9b52c1fb6a8ef";
+    var response = await http.get(Uri.parse(url));
+    var data = json.decode(response.body);
+    print(data);
+    setState(() {
+      items = data;
+      present = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +105,7 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
                                         label: sliderValue.toString(),
                                         divisions: 1,
                                         onChanged: (newValue) {
+                                          recommendation();
                                           setState(
                                               () => sliderValue = newValue);
                                         },
@@ -108,10 +131,14 @@ class _RecomedationRecipieWidgetState extends State<RecomedationRecipieWidget> {
                                 decoration: BoxDecoration(),
                                 child: Expire4Widget(),
                               ),
+                              if(present)
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.95,
+                                width: MediaQuery.of(context).size.width * 0.9,
                                 decoration: BoxDecoration(),
-                                child: Home1Widget(),
+                      //           if(present)
+                      // ...(items).map((item){
+                      //   return RecipiesearchComponentWidget(item);
+                      // })
                               ),
                             ],
                           ),
