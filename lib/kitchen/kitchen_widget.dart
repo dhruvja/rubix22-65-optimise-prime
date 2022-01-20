@@ -1,6 +1,5 @@
 import '../components/expire3_widget.dart';
 import '../components/lists1_widget.dart';
-import '../components/stat_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +19,6 @@ class _KitchenWidgetState extends State<KitchenWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.primaryColor,
-        automaticallyImplyLeading: true,
-        actions: [],
-        centerTitle: true,
-        elevation: 4,
-      ),
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -45,7 +37,6 @@ class _KitchenWidgetState extends State<KitchenWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Expire3Widget(),
-            StatWidget(),
             Expanded(
               child: Lists1Widget(),
             ),
