@@ -23,21 +23,23 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
-                    child: StatWidget(),
-                  ),
-                ],
-              ),
-              Home2Widget(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 7),
+                      child: StatWidget(),
+                    ),
+                  ],
+                ),
+                Home2Widget(),
+              ],
+            ),
           ),
         ),
       ),
