@@ -3,9 +3,9 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../recipietemp/recipietemp_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RecipiesearchComponentWidget extends StatelessWidget {
-
   var values;
 
   RecipiesearchComponentWidget(this.values);
@@ -15,8 +15,8 @@ class RecipiesearchComponentWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.95,
-        height: 120,
+        width: MediaQuery.of(context).size.width * 0.90,
+        height: 130,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.tertiaryColor,
           boxShadow: [
@@ -44,9 +44,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                       color: Color(0xFFEEEEEE),
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: Image.network(
-                          values['image']
-                        ).image,
+                        image: Image.network(values['image']).image,
                       ),
                       borderRadius: BorderRadius.circular(0),
                     ),
@@ -62,10 +60,13 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         values['title'],
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        softWrap: false,
                         style: FlutterFlowTheme.title1.override(
                           fontFamily: 'Poppins',
                           fontSize: 20,
@@ -83,7 +84,7 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                     ],
                   ),
                   Row(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         'Fat Content',
@@ -107,6 +108,9 @@ class RecipiesearchComponentWidget extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () async {
+                          print(values['id']);
+                          SharedPreferences prefs = await SharedPreferences.getInstance();
+                          prefs.setInt("id", values['id']);
                           await Navigator.push(
                             context,
                             MaterialPageRoute(

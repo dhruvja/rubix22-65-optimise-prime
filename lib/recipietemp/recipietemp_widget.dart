@@ -6,9 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RecipietempWidget extends StatefulWidget {
-  const RecipietempWidget({Key key}) : super(key: key);
+  RecipietempWidget({Key key}) : super(key: key);
 
   @override
   _RecipietempWidgetState createState() => _RecipietempWidgetState();
@@ -17,6 +18,7 @@ class RecipietempWidget extends StatefulWidget {
 class _RecipietempWidgetState extends State<RecipietempWidget> {
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
 
   var recipeInfo;
   var steps;
@@ -29,10 +31,13 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
   }
 
   void getData() async {
-    var id = "324694";
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var id = prefs.getInt("id");
+    // var id = "324694";
+    print(id);
     var API_KEY = "8afaaf5604f4495fa9e9b52c1fb6a8ef";
     String url = "https://api.spoonacular.com/recipes/" +
-        id +
+        id.toString() +
         "/analyzedInstructions?apiKey=" +
         API_KEY;
 
@@ -45,7 +50,7 @@ class _RecipietempWidgetState extends State<RecipietempWidget> {
       steps = data[0];
     });
     url = "https://api.spoonacular.com/recipes/" +
-        id +
+        id.toString() +
         "/information?apiKey=" +
         API_KEY;
     response = await http.get(Uri.parse(url));

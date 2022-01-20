@@ -47,6 +47,7 @@ dependencies:
   flutter_tts: ^3.3.3
   table_calendar: ^3.0.3
   lottie: ^1.2.1
+  shared_preferences: ^2.0.12
 
 dev_dependencies:
 
